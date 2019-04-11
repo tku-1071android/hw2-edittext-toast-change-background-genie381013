@@ -42,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private String standardBMI(double st){
         String alert = "";
+
+        if(st>25){
+            alert = String.valueOf("You are too heavy!!!!");
+
+        }
     }
-    
+
 }
