@@ -3,9 +3,9 @@ package com.example.hw02;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private EditText ed1, ed2, ed3;
@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getWindow().setBackgroundDrawableResource(R.drawable.dog);
 
     }
     int size = 15;
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         txv.setTextSize(size);
         txv.setText(ed1.getText().toString() + ",您好\n" + "您的BMI是:" + BMI2) ;
+        Toast.makeText(this, standardBMI(BMI1), Toast.LENGTH_LONG).show();
     }
     private float calculateBMI(float height, float weight){
         float BMI = (float) (weight / Math.pow((height/100),2));
@@ -45,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(st>25){
             alert = String.valueOf("You are too heavy!!!!");
-            getWindow().setBackgroundDrawableResource();
+            getWindow().setBackgroundDrawableResource(R.drawable.fatdog);
         }
-    }
+        else if (st<18.5)
+        }
 
-}
+        }
