@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(st>25){
             alert = String.valueOf("You are too heavy!!!!");
-
+            getWindow().setBackgroundDrawableResource();
         }
     }
 
