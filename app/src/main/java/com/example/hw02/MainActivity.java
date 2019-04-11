@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
-
+    private EditText ed1, ed2, ed3;
+    private TextView txv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,28 +18,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    int size = 30;
+    int size = 15;
     public void response (View v){
-        EditText ed1, ed2, ed3;
-        TextView txv;
-        Button btn;
+
 
         ed1 = findViewById(R.id.editText);
         ed2 = findViewById(R.id.editText2);
         ed3 = findViewById(R.id.editText3);
         txv = findViewById(R.id.textView);
-        btn = findViewById(R.id.btn);
 
 
-        double height = Double.parseDouble(ed2.getText().toString());
-        double weight = Double.parseDouble(ed3.getText().toString());
+        float height = Float.parseFloat(ed2.getText().toString());
+        float weight = Float.parseFloat(ed3.getText().toString());
+        float BMI1 = calculateBMI(height, weight);
+        String BMI2 = String.valueOf(BMI1);
 
         txv.setTextSize(size);
-        txv.setText(ed1.getText().toString() + ",您好\n" + "您的BMI是:") ;
+        txv.setText(ed1.getText().toString() + ",您好\n" + "您的BMI是:" + BMI2) ;
     }
-    private double calculateBMI(double height, double weight){
-        double BMI = 0;
-        BMI = weight / Math.pow((height/100),2);
+    private float calculateBMI(float height, float weight){
+        float BMI = (float) (weight / Math.pow((height/100),2));
         return BMI;
     }
+    private String standardBMI(double st){
+        String alert = "";
+    }
+    
 }
