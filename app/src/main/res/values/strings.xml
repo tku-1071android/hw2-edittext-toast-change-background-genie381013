@@ -3,4 +3,5 @@
     <string name="name" >Name</string>
     <string name="height" >Height</string>
     <string name="weight" >Weight</string>
+    <string name="Click_me" >Click Me</string>
 </resources>

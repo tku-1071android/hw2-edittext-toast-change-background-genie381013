@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setBackgroundDrawableResource(R.drawable.dog);
 
     }
-    int size = 15;
+    int size = 30;
     public void response (View v){
 
 
@@ -48,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
             alert = String.valueOf("You are too heavy!!!!");
             getWindow().setBackgroundDrawableResource(R.drawable.fatdog);
         }
-        else if (st<18.5)
+        else if (st<18.5){
+            alert = String.valueOf("You are too slim.");
+            getWindow().setBackgroundDrawableResource(R.drawable.dogtears);
         }
+        else{
+            alert = String.valueOf("Your body is good!");
+        }
+        return alert;
+    }//standardBMI
 
-        }
+}//public class
